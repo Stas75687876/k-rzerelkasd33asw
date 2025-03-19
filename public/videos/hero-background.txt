@@ -1,0 +1,7 @@
+Diese Datei ist ein Platzhalter für das Hero-Hintergrundvideo (hero-background.mp4).
+
+Bitte ersetzen Sie diese .txt-Datei durch eine echte .mp4-Videodatei mit dem Namen "hero-background.mp4".
+Die empfohlene Größe ist 1920x1080px im MP4-Format (H.264).
+
+Das Video sollte 15-30 Sekunden lang sein und wird als Loop im Hintergrund des Hero-Bereichs abgespielt.
+Es sollte visuell ansprechend sein, aber nicht zu ablenkend, da es nur als Hintergrund dient. 

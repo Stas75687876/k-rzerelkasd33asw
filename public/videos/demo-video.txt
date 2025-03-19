@@ -1,0 +1,7 @@
+Diese Datei ist ein Platzhalter für das Demo-/Werbevideo (demo-video.mp4).
+
+Bitte ersetzen Sie diese .txt-Datei durch eine echte .mp4-Videodatei mit dem Namen "demo-video.mp4".
+Die empfohlene Größe ist 1920x1080px im MP4-Format (H.264).
+
+Das Video sollte 1-3 Minuten lang sein und Ihre Dienstleistungen und Produkte präsentieren.
+Es wird im Portfolio-Bereich angezeigt und kann vom Benutzer abgespielt werden. 

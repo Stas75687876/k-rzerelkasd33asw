@@ -1,0 +1,17 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1920" height="1080" fill="#1a1a2e"/>
+  <rect x="0" y="0" width="1920" height="1080" fill="url(#gradient)"/>
+  
+  <circle cx="960" cy="540" r="120" fill="#6C63FF" fill-opacity="0.3"/>
+  <polygon points="920,480 1020,540 920,600" fill="white"/>
+  
+  <text x="960" y="750" font-family="Arial" font-size="48" text-anchor="middle" fill="white">Demo Video</text>
+  <text x="960" y="820" font-family="Arial" font-size="32" text-anchor="middle" fill="#9ca3af">Klicken Sie um abzuspielen</text>
+  
+  <defs>
+    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7928CA" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#FF0080" stop-opacity="0.2"/>
+    </linearGradient>
+  </defs>
+</svg> 

@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: wowweb
+    env: node
+    buildCommand: npm install && NODE_ENV=production NEXT_LINT=false npm run build
+    startCommand: npm start
+    rootDir: .
+    region: frankfurt
+    plan: starter
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
+        sync: false
+      - key: STRIPE_SECRET_KEY
+        sync: false
+      - key: DATABASE_URL
+        sync: false
+    autoDeploy: true
+    healthCheckPath: /api/health
+    branch: main
+    pullRequestPreviewsEnabled: true 
