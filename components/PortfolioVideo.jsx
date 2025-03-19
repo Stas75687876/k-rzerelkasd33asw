@@ -5,7 +5,7 @@ const PortfolioVideo = () => {
   return (
     <div className={styles.portfolioVideoContainer}>
       <iframe
-        src="https://player.vimeo.com/video/1067508106?h=343f245390&autoplay=0&loop=0"
+        src="https://player.vimeo.com/video/76979871?autoplay=0&loop=0"
         frameBorder="0"
         allow="autoplay; fullscreen; picture-in-picture"
         allowFullScreen
