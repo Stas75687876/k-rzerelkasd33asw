@@ -3,34 +3,19 @@
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Button } from './ui/button';
-import { Play, Pause, ExternalLink } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 import { useState } from 'react';
 
 export default function PortfolioSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px 0px" });
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const [isPlaying, setIsPlaying] = useState(false);
-
-  // Video-Steuerung
-  const togglePlayback = () => {
-    if (videoRef.current) {
-      if (videoRef.current.paused) {
-        videoRef.current.play();
-        setIsPlaying(true);
-      } else {
-        videoRef.current.pause();
-        setIsPlaying(false);
-      }
-    }
-  };
 
   return (
     <section id="portfolio" className="py-24 bg-black relative overflow-hidden">
       {/* Hintergrund-Effekt */}
       <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-black to-transparent z-10"></div>
       <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-black to-transparent z-10"></div>
-      
+
       <div className="container mx-auto px-4">
         <motion.div
           ref={ref}
@@ -47,35 +32,24 @@ export default function PortfolioSection() {
           </p>
         </motion.div>
 
-        {/* Video-Container */}
+        {/* Video-Container mit Vimeo */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
           transition={{ duration: 0.7, delay: 0.3 }}
           className="relative max-w-5xl mx-auto rounded-xl overflow-hidden shadow-2xl shadow-purple-900/30"
         >
-          <div className="aspect-video bg-gray-900 relative group">
-            <video
-              ref={videoRef}
-              className="w-full h-full object-cover"
-              src="/videos/demo-video.mp4"
-              poster="/videos/video-thumbnail.svg"
-              preload="metadata"
-            ></video>
-            
-            {/* Video-Steuerelemente */}
-            <div className="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/40 transition-all duration-300">
-              <Button 
-                variant="outline" 
-                size="lg"
-                className="rounded-full bg-purple-600/90 hover:bg-purple-700 border-purple-500 w-16 h-16 flex items-center justify-center"
-                onClick={togglePlayback}
-              >
-                {isPlaying ? <Pause size={24} /> : <Play size={24} />}
-              </Button>
-            </div>
+          <div className="aspect-video bg-gray-900 relative">
+            <iframe
+              className="w-full h-full"
+              src="https://player.vimeo.com/video/76979871?autoplay=0^&loop=0"
+              frameBorder="0"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowFullScreen
+              title="Demo Video"
+            </iframe>
           </div>
-          
+
           <div className="bg-gray-900/95 p-6 border-t border-purple-500/20">
             <h3 className="text-xl font-bold text-white mb-2">Entdecken Sie unsere digitalen Lösungen</h3>
             <p className="text-gray-300 mb-4">
@@ -96,4 +70,4 @@ export default function PortfolioSection() {
       </div>
     </section>
   );
-} 
+}

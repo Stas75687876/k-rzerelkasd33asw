@@ -8,19 +8,18 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 export default function HeroSection() {
   const textRef = useRef<HTMLDivElement>(null);
-  const videoRef = useRef<HTMLVideoElement>(null);
-  
+  const iframeRef = useRef<HTMLIFrameElement>(null);
+
   useEffect(() => {
     // Register ScrollTrigger plugin
     if (typeof window !== 'undefined') {
       gsap.registerPlugin(ScrollTrigger);
-      
+
       // Animate the hero text
       const textElements = textRef.current?.querySelectorAll('.animate-text');
       if (textElements) {
         gsap.fromTo(textElements, {
           y: 100,
-          opacity: 0
         }, {
           y: 0,
           opacity: 1,
@@ -29,13 +28,13 @@ export default function HeroSection() {
           ease: "power3.out"
         });
       }
-      
-      // Parallax effect for video background
-      if (videoRef.current) {
-        gsap.to(videoRef.current, {
+
+      // Parallax effect für iframe background
+      if (iframeRef.current) {
+        gsap.to(iframeRef.current, {
           y: '30%',
           scrollTrigger: {
-            trigger: videoRef.current,
+            trigger: iframeRef.current,
             start: 'top top',
             end: 'bottom top',
             scrub: true
@@ -66,20 +65,20 @@ export default function HeroSection() {
       window.location.href = '/#portfolio';
     }
   };
-  
+
   return (
     <div className="relative h-screen overflow-hidden bg-black">
       {/* Video Background */}
       <div className="absolute inset-0 w-full h-full bg-black">
-        <video
-          ref={videoRef}
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute w-full h-full object-cover opacity-60"
-          src="/videos/hero-background.mp4"
-        ></video>
+        <iframe
+          ref={iframeRef}
+          src="https://player.vimeo.com/video/435817055?autoplay=1^&loop=1^&background=1^&muted=1"
+          allow="autoplay; fullscreen"
+          allowFullScreen
+          className="absolute w-full h-full object-cover"
+          style={{ position: 'absolute', width: '100%', height: '100%', opacity: 0.6 }}
+          title="Hero Background Video"
+        </iframe>
         {/* Overlay für besseren Kontrast */}
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/30"></div>
       </div>
@@ -95,7 +94,7 @@ export default function HeroSection() {
           >
             Moderne Websites mit <span className="text-purple-400">Wow-Effekt</span>
           </motion.h1>
-          
+
           <motion.p 
             className="text-xl md:text-2xl text-gray-300 mb-10 animate-text"
             initial={{ opacity: 0, y: 50 }}
@@ -105,7 +104,7 @@ export default function HeroSection() {
             Wir entwickeln maßgeschneiderte Webseiten, die Ihre Besucher begeistern
             und Ihr Unternehmen digital erfolgreich machen.
           </motion.p>
-          
+
           <motion.div 
             className="flex flex-col md:flex-row gap-4 justify-center animate-text"
             initial={{ opacity: 0, y: 50 }}
@@ -130,9 +129,9 @@ export default function HeroSection() {
           </motion.div>
         </div>
       </div>
-      
+
       {/* Gradient overlay at the bottom for smooth transition */}
       <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-black to-transparent"></div>
     </div>
   );
-} 
+}
