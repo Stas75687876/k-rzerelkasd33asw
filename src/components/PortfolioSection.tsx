@@ -1,6 +1,13 @@
+/* @jsx React.createElement */
+/* @jsxFrag React.Fragment */
 'use client';
 
 import React, { useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
+import { Button } from './ui/button';
+import { ExternalLink } from 'lucide-react';
+import { useState } from 'react';
+
 import { motion, useInView } from 'framer-motion';
 import { Button } from './ui/button';
 import { ExternalLink } from 'lucide-react';
