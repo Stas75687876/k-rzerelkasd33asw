@@ -1,6 +1,11 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
+import { motion } from 'framer-motion';
+import { Button } from './ui/button';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
 import { motion } from 'framer-motion';
 import { Button } from './ui/button';
 import gsap from 'gsap';
